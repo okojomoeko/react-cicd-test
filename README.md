@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # react-test-cicd
 =======
 # Getting Started with Create React App
@@ -47,4 +46,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
->>>>>>> master
+
+
+## Memo
+
+- gitlab ci/cdとかgithub actionsでreact appのテスト自動化のテストサンプル
+
+- github/gitlab両方知識がないけど、master/main、developブランチへのpushがあると動作するようになってる
+
+- deployは個人サイトとかappとか考えてないのでつけてない
