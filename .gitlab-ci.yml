@@ -1,0 +1,28 @@
+image: node:14.15.3-alpine
+
+
+cache:
+  paths:
+    - node_modules
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - echo "Start building App"
+    - npm install
+    - npm build
+    - echo "Build successfully!"
+
+test:
+  stage: test
+  script:
+    - echo "Testing App"
+    - CI=true npm test
+    - echo "Test successfully!"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
