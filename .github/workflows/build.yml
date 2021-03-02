@@ -1,0 +1,33 @@
+name: Test React Web App
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build_test:
+    runs-on: ubuntu-18.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.15.3
+
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      - name: Build
+        run: |
+          npm build
+
+      - name: Test
+        run: |
+          npm test
