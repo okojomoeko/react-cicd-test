@@ -89,3 +89,8 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 ```
+当然失敗するので、この状態でgithubにぷっしゅ！！！
+
+workflowが実行されて、テストの部分で見事にコケるのである！！！
+
+githubのprivate branchではブランチ保護が有効にできないことに注意
