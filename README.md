@@ -55,3 +55,37 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - github/gitlab両方知識がないけど、master/main、developブランチへのpushがあると動作するようになってる
 
 - deployは個人サイトとかappとか考えてないのでつけてない
+
+## 使い方・確認の仕方
+
+まずはこのrepoをcloneする
+
+そしてdevelopブランチに切り替える
+
+`git checkout -b develop`
+
+パッケージインストールしてビルドする
+
+`npm install; npm run build`
+
+とりあえずそのまま動かしてみよう
+
+`npm start`
+
+`localhost:3000`でReactの画面が出ればOK
+
+次にテストを実行してみる
+
+`npm test`
+
+当然成功する
+
+ではここで、testの内容を一部修正してみよう
+
+``` App.test.tsx
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/hello react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+```
