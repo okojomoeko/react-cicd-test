@@ -93,4 +93,6 @@ test('renders learn react link', () => {
 
 workflowが実行されて、テストの部分で見事にコケるのである！！！
 
+ブランチ保護設定してればCIのテストでこければブランチが改変されない便利！！！
+
 githubのprivate branchではブランチ保護が有効にできないことに注意
