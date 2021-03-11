@@ -55,3 +55,50 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - github/gitlab両方知識がないけど、master/main、developブランチへのpushがあると動作するようになってる
 
 - deployは個人サイトとかappとか考えてないのでつけてない
+
+## 使い方・確認の仕方
+
+まずはこのrepoをcloneする
+
+そしてdevelopブランチに切り替える
+
+`git checkout -b develop`
+
+パッケージインストールしてビルドする
+
+`npm install; npm run build`
+
+とりあえずそのまま動かしてみよう
+
+`npm start`
+
+`localhost:3000`でReactの画面が出ればOK
+
+次にテストを実行してみる
+
+`npm test`
+
+当然成功する
+
+ではここで、testの内容を一部修正してみよう
+
+``` App.test.tsx
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/hello react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+```
+当然失敗するので、この状態でgithubにぷっしゅ！！！
+
+workflowが実行されて、テストの部分で見事にコケるのである！！！
+
+ブランチ保護設定してればCIのテストでこければブランチが改変されない便利！！！
+
+githubのprivate branchではブランチ保護が有効にできないことに注意
+
+ブランチ保護設定で`develop, main`には直接変更ができなくなった！
+
+一度`feature/test`みたいなブランチを切って、`develop`にマージしてみる
+
+ブランチ保護設定がガチガチすぎるとつむ
